@@ -1,0 +1,77 @@
+.button1{
+  text-align: center;
+  font-size: 20px;
+  border-radius: 100%;
+  height: 200px;
+  width: 200px;
+  border-color:#f44336;
+  color: white;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.title{
+  text-align: center;
+  font-size: 200%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+.container {
+  position: relative;
+  color: white;
+}
+html, body {
+    font-size: 25;
+    margin: 0;
+    padding: 0;
+}
+.Center {
+position: absolute;
+top: 35%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.cover {
+  /* Full height */
+    background:
+    /* top, transparent red */
+    linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    /* bottom, image */
+    url(https://archive-media-1.nyafuu.org/wg/image/1508/10/1508105027081.jpg);
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+th{
+    font-size: 18px;
+}
+table, th, td, tr{
+  border: none;
+  border-collapse: collapse;
+  color: white;
+  background-color: black;
+  padding: 12px 15px;
+}
+
+.table-text{
+    text-align: center;
+    font-size: 20px;
+}
+
+.search-bar{
+  border:none;
+  padding: 10px 20px;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+

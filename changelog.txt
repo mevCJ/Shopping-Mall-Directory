@@ -1,0 +1,19 @@
+app\Http\Controller\TenantController.php :
+*added public function user
+*added public function search
+*added public function sortbyname,sortbyzone,sortbycategory
+
+routes\web.php :
+*added Route::get('/user')
+*added Route::get('/search')
+*added Route::get('/main/sortbyname') & sortbyzone & sortbycategory
+
+public\css :
+*added new css style name userStyle.css
+*added new css style name mainStyle.css
+
+resources\views\tenants :
+*added search.blade.php
+*added user.blade.php
+*added home.blade.php
+*added main.blade.php
