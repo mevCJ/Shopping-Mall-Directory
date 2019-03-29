@@ -2,7 +2,7 @@
 use App\Common;
 ?>
 
-@extends('layouts.app')
+@extends('layouts.app1')
 
 <head>
   <title>MoonWay Velocity Megamall</title>
@@ -11,7 +11,7 @@ use App\Common;
 
 @section('content')
 <div class=container>
-<div class=cover style="height: 200%"></div>
+<div class=cover style="height: 150%"></div>
 <div class=title>Welcome to MoonWay Velocity Megamall Directory</div>
 <div class=Center>
   <div>
@@ -46,22 +46,10 @@ use App\Common;
 <div class="panel-body">
     @if(count($tenants) > 0)
     <table class="table table-striped task-table">
-        <!-- Table Headings -->
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Lot Number</th>
-                <th>Zone</th>
-                <th>Level</th>
-                <th>Category</th>
-            </tr>
-        </thead>
-        <!-- Table Body -->
         <tbody>
             @foreach ($tenants as $i => $tenant)
-            {!! Form::model($tenant, [ 'route' => ['tenant.destroy', $tenant->id], 'method'=>'delete', 'class' => 'form-horizontal' ]) !!}
             <tr>
-                <td class="table-text">
+                <td class="table-text dir-cell">
                     <div>{!!  link_to_route('tenant.map',
                       $title= $tenant->name,
                       $parameters = [
@@ -71,16 +59,16 @@ use App\Common;
                   </div>
                   
                 </td>
-                <td class="table-text">
+                <td class="table-text dir-cell">
                     <div>{{ $tenant->lot_number }}</div>
                 </td>
-                <td class="table-text">
+                <td class="table-text dir-cell">
                     <div>{{ Common::$zone[$tenant->zone] }}</div>
                 </td>
-                <td class="table-text">
+                <td class="table-text dir-cell">
                     <div>{{ Common::$level[$tenant->level] }}</div>
                 </td>
-                <td class="table-text">
+                <td class="table-text dir-cell">
                     <div>{{ $tenant->category }}</div>
                 </td>
             </tr>

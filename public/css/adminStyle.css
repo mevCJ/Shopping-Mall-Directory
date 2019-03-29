@@ -64,6 +64,7 @@ tr:nth-child(even)
 .table-text{
     text-align: center;
     font-size: 20px;
+
 }
 
 .control-label{
@@ -130,4 +131,10 @@ tr:nth-child(even)
 
 .pagination{
   display: inline-block;
+}
+
+
+.dir-row:hover{
+    background-color: #474747da;
+    cursor: pointer;
 }
