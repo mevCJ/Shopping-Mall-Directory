@@ -108,40 +108,52 @@ class TenantController extends Controller
 
     public function main(Request $request)
     {
-      $tenants = Tenant::orderBy('level')->orderBy('name')
-      ->when($request->query('lot_number'), function($query) use ($request) {
-          return $query->where('lot_number', $request->query('lot_number'));
-      })
+      $tenants = Tenant::orderBy('name')
       ->when($request->query('name'), function($query) use ($request) {
           return $query->where('name', 'like', '%'.$request->query('name').'%');
-      })
-      ->when($request->query('category'), function($query) use ($request) {
-          return $query->where('category', $request->query('category'));
-      })
-      ->when($request->query('zone'), function($query) use ($request) {
-          return $query->where('zone', $request->query('zone'));
-      })
-      ->when($request->query('level'), function($query) use ($request) {
-          return $query->where('level', $request->query('level'));
-      })
-      ->paginate(10);
+      });
       return view('tenants.main', [
           'request' => $request,
           'tenants' => $tenants,
       ]);
     }
 
+    public function sortbylevel(){
+        $host = 'level';
+        $tenants = Tenant::orderBy('level')->orderBy('name')->get();
+        $sorter = Tenant::select('level')->distinct()->get();
+        $compare = 'level';
+        return view('tenants.main', [
+            'tenants' => $tenants,
+            'sorter' => $sorter,
+            'host' => $host,
+            'compare' => $compare
+        ]);
+    }
+
     public function sortbycategory(){
+      $host = 'category';
       $tenants = Tenant::orderBy('category')->orderBy('name')->get();
+      $sorter = Tenant::select('category')->distinct()->get();
+      $compare = 'category';
       return view('tenants.main', [
           'tenants' => $tenants,
+          'sorter' => $sorter,
+          'host' => $host,
+          'compare' => $compare
       ]);
     }
 
     public function sortbyzone(){
+      $host = 'zone';
       $tenants = Tenant::orderBy('zone')->orderBy('name')->get();
+      $sorter = Tenant::select('zone')->distinct()->get();
+      $compare = 'zone';
       return view('tenants.main', [
           'tenants' => $tenants,
+          'sorter' => $sorter,
+          'host' => $host,
+          'compare' => $compare
       ]);
     }
 
