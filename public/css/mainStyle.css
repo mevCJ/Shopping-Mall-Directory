@@ -18,16 +18,9 @@ body, html{
   padding: 0px;
   margin: 0px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: white;
 }
 
-.title{
-  text-align: center;
-  font-size: 200%;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%);
-}
 .container {
   position: relative;
   color: white;
@@ -125,4 +118,45 @@ a{
 
 a:hover{
   text-decoration: underline;
+}
+
+.panel-body{
+  margin: 0;
+  padding: 0;
+  width: 33%;
+  background-color: #1b1b1b;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  box-shadow: 8px 0px 3px 0px rgba(0, 0, 0, 0.219);
+}
+
+.content{
+  margin-left: 500px;
+  padding: 0px 50px;
+  height: 1000px;
+  color:white;
+}
+
+.name{
+  width:150px;
+}
+
+.divider{
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  background-color: #f44336;
+}
+.table{
+  padding: 12px 15px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
 }

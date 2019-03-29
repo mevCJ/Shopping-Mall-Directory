@@ -69,12 +69,7 @@ class TenantController extends Controller
             'tenants' => $tenants,
         ]);
     }
-
-    public function user()
-    {
-      return view('tenants.user');
-    }
-
+    
     public function home()
     {
       return view('tenants.home');

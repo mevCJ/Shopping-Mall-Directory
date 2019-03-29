@@ -17,7 +17,7 @@ use App\Common;
   {{$tenant->id}}
   <img src="/storage/tenants/{{$tenant->id}}.gif" width="240">
   @endif
-  {{$tenant->id}}
+  <img src="/storage/tenants/{{$tenant->id}}.jpg" width="240">
 </div>
 </div>
 

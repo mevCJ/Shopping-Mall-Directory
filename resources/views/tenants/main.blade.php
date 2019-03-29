@@ -3,83 +3,61 @@ use App\Common;
 ?>
 
 @extends('layouts.app1')
-
 <head>
   <title>MoonWay Velocity Megamall</title>
 <link rel="stylesheet" href="{{asset('css/mainStyle.css')}}" type="text/css">
 </head>
 
 @section('content')
-<div class=container>
-<div class=cover style="height: 150%"></div>
-<div class=title>Welcome to MoonWay Velocity Megamall Directory</div>
-<div class=Center>
-  <div>
-  <a href="{{route('tenant.sortbyname')}}"  style="color:white" >Alphabetical</a>  |
-  <a href="{{route('tenant.sortbyzone')}}"  style="color:white" >Zone</a> |
-  <a href="{{route('tenant.sortbycategory')}}"  style="color:white" >Category</a>  |
-  <a href="{{route('tenant.sortbylevel')}}"  style="color:white" >Level</a>
-</div>
-{!! Form::open([
-    'route' => ['tenant.main'],
-    'method' => 'get',
-    'class' => 'form-inline'
-]) !!}
-{!! Form::label('tenant-name', ' ', [
-    'class' => 'control-label col-sm-3',
-]) !!}
-{!! Form::text('name', null, [
-    'id' => 'tenant-name',
-    'class' => 'form-control search-bar',
-    'maxlength' => 100,
-    'placeholder' => 'Enter tenants name or keywords',
-    'size' => '50',
-]) !!}
-{!! Form::button('Search', [
-    'type' => 'submit',
-    'class' => 'btn btn-primary',
-]) !!}
-
-{!! Form::close() !!}
-
-
 <div class="panel-body">
+  <div>
+  <a href="{{route('tenant.sortbyzone')}}"  class="btn-primary" >Zone</a> |
+  <a href="{{route('tenant.sortbycategory')}}" class="btn-primary"  >Category</a>  |
+  <a href="{{route('tenant.sortbylevel')}}" class="btn-primary"  >Level</a>
+</div>
     @if(count($tenants) > 0)
-    <table class="table table-striped task-table">
-        <tbody>
+            @foreach ($sorter as $j => $s)
+            <div class="divider">
+            @if ($host === 'zone')
+                {{ Common::$zone[$s->zone] }}
+            @elseif ($host === 'category')
+                {{ $s->category }}
+            @elseif ($host === 'level')
+                {{ Common::$level[$s->level]}}
+            @endif
+            </div>
             @foreach ($tenants as $i => $tenant)
-            <tr>
-                <td class="table-text dir-cell">
-                    <div>{!!  link_to_route('tenant.map',
-                      $title= $tenant->name,
-                      $parameters = [
-                      'id' => $tenant->id,
-                      ]
-                    ) !!}
-                  </div>
-                  
+            @if ($tenant->$compare === $s->$compare)
+            <table class="table table-striped task-table">
+            <tbody>
+            <tr onClick="window.location='{{route('tenant.map', [$tenant->id])}}'">
+                <td class="table-text dir-cell name" style="color: #e56a1d">
+                    <div>{{$tenant->name}}</div>
                 </td>
-                <td class="table-text dir-cell">
-                    <div>{{ $tenant->lot_number }}</div>
-                </td>
-                <td class="table-text dir-cell">
+                <td class="table-text dir-cell zone">
                     <div>{{ Common::$zone[$tenant->zone] }}</div>
                 </td>
-                <td class="table-text dir-cell">
+                <td class="table-text dir-cell level">
                     <div>{{ Common::$level[$tenant->level] }}</div>
                 </td>
-                <td class="table-text dir-cell">
+                <td class="table-text dir-cell category">
                     <div>{{ $tenant->category }}</div>
                 </td>
             </tr>
+            </tbody>
+            </table>
+            @endif
             @endforeach
-        </tbody>
-    </table>
+            @endforeach
     @else
     <div>
         No records found
     </div>
     @endif
   </div>
+
+    <div class="content">
+        <div>Welcome to MoonWay Velocity Megamall Directory</div>
+    </div>
 
 @endsection
