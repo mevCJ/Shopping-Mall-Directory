@@ -11,9 +11,9 @@ class Common{
     ];
 
     public static $level = [
-        '1' => 'G',
-        '2' => 'First Floor',
-        '3' => 'Second Floor',
-        '4' => 'Third Floor',
+        '1' => 'GF',
+        '2' => '1F',
+        '3' => '2F',
+        '4' => '3F',
     ];
 }

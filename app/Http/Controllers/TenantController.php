@@ -9,6 +9,33 @@ use App\Http\Requests\UploadPhotoRequest;
 use Illuminate\Pagination\LengthAwarePaginator;
 class TenantController extends Controller
 {
+    //user
+    public function home()
+    {
+      return view('tenants.home');
+    }
+
+    public function main(Request $request)
+    {
+        $sort = $request->input('sort');
+        if(empty($sort))
+            $sort = 'zone';
+            
+        $id = $request->input('id');
+
+        $aTenant = Tenant::find($id);
+        $tenants = Tenant::orderBy($sort)->orderBy('name')->where('id', '!=', '1')->get();
+        $sorter = Tenant::select($sort)->distinct()->where($sort, '!=', 'sample')->get();
+        
+        return view('tenants.main', [
+            'tenants' => $tenants,
+            'sorter' => $sorter,
+            'sort' => $sort,
+            'aTenant' => $aTenant
+        ]);
+    }
+    
+    //admin
     public function create()
     {
         $tenant = new Tenant();
@@ -70,16 +97,6 @@ class TenantController extends Controller
         ]);
     }
 
-    public function user()
-    {
-      return view('tenants.user');
-    }
-
-    public function home()
-    {
-      return view('tenants.home');
-    }
-
     public function search(Request $request)
     {
       $tenants = Tenant::orderBy('category')->orderBy('name')
@@ -103,60 +120,6 @@ class TenantController extends Controller
       return view('tenants.search', [
           'request' => $request,
           'tenants' => $tenants,
-      ]);
-    }
-
-    public function main(Request $request)
-    {
-      $tenants = Tenant::orderBy('level')->orderBy('name')
-      ->when($request->query('lot_number'), function($query) use ($request) {
-          return $query->where('lot_number', $request->query('lot_number'));
-      })
-      ->when($request->query('name'), function($query) use ($request) {
-          return $query->where('name', 'like', '%'.$request->query('name').'%');
-      })
-      ->when($request->query('category'), function($query) use ($request) {
-          return $query->where('category', $request->query('category'));
-      })
-      ->when($request->query('zone'), function($query) use ($request) {
-          return $query->where('zone', $request->query('zone'));
-      })
-      ->when($request->query('level'), function($query) use ($request) {
-          return $query->where('level', $request->query('level'));
-      })
-      ->paginate(10);
-      return view('tenants.main', [
-          'request' => $request,
-          'tenants' => $tenants,
-      ]);
-    }
-
-    public function sortbycategory(){
-      $tenants = Tenant::orderBy('category')->orderBy('name')->get();
-      return view('tenants.main', [
-          'tenants' => $tenants,
-      ]);
-    }
-
-    public function sortbyzone(){
-      $tenants = Tenant::orderBy('zone')->orderBy('name')->get();
-      return view('tenants.main', [
-          'tenants' => $tenants,
-      ]);
-    }
-
-    public function sortbyname(){
-      $tenants = Tenant::orderBy('name')->get();
-      return view('tenants.main', [
-          'tenants' => $tenants,
-      ]);
-    }
-
-    public function displayMap($id){
-      $tenant = Tenant::find($id);
-      if(!$tenant) throw new ModelNotFoundException;
-      return view('tenants.map', [
-          'tenant' => $tenant
       ]);
     }
 

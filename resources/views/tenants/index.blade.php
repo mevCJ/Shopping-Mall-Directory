@@ -68,6 +68,7 @@ use App\Common;
                                 'id' => $tenant->id,
                         ]
                         ) !!}
+                        |
                         {!! link_to_route(
                             'tenant.upload',
                             $title = 'Upload',
@@ -76,6 +77,7 @@ use App\Common;
                             ]
 
                         ) !!}
+                        |
                         {!! Form::button('Delete', [
                             'type' => 'Submit',
                             'class' => 'btn btn-secondary warning'
@@ -95,6 +97,8 @@ use App\Common;
     <div>
     <a href="{{route('tenant.create')}}" class="btn-primary" id="btnAdd">Add New</a>
      </div>
-    {{ $tenants->links() }}
 </div>
+
+    {{ $tenants->links() }}
+
 @endsection
