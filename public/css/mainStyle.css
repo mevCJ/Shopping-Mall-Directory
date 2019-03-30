@@ -59,11 +59,13 @@ th{
 table{
   border: none;
   border-collapse: collapse;
+  width:100%;
 }
 
 tr:hover{
   background-color: #474747da;
   cursor: pointer;
+
 }
 
 td{
@@ -124,30 +126,35 @@ a:hover{
   margin: 0;
   padding: 0;
   width: 33%;
-  background-color: #1b1b1b;
+  background-color: #222222;
   position: fixed;
   height: 100%;
   overflow: auto;
-  box-shadow: 8px 0px 3px 0px rgba(0, 0, 0, 0.219);
-}
-
-.content{
-  margin-left: 500px;
-  padding: 0px 50px;
-  height: 1000px;
-  color:white;
+  box-shadow: 8px 0px 10px rgba(0, 0, 0, 0.219);
 }
 
 .name{
   width:150px;
 }
 
+.zone{
+  width:50px;
+  text-align: center;
+}
+
+.level{
+  width:50px;
+  text-align: center;
+}
+
 .divider{
   color: white;
   text-align: center;
-  font-size: 40px;
+  font-size: 30px;
+  padding: 5px;
   background-color: #f44336;
 }
+
 .table{
   padding: 12px 15px;
 }
@@ -159,4 +166,41 @@ a:hover{
 /* optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
   background: #FF0000;
+}
+
+.content{
+  margin-left: 33%;
+  height: 1000px;
+  color:black;
+}
+
+.banner{
+  height: 500px;
+  padding: 0px;
+  margin: 0px;
+  align-content: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.banner-txt{
+  position: relative;
+  float: left;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-nav{
+  background-color: #bb3229;
+  color: #c2c2c2;
+}
+
+.btn-nav:hover{
+  color: rgb(233, 233, 233);
+}
+
+.active{
+  background-color: #f44336;
+  color: white;
 }

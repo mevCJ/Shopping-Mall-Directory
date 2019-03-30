@@ -18,12 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });*/
 Route::get('/home','TenantController@home')->name('tenant.home');
-Route::get('/main','TenantController@sortbylevel')->name('tenant.main');
-Route::get('/main/map/{tenant}','TenantController@displayMap')->name('tenant.map');
-
-Route::get('/main/sortbyzone','TenantController@sortbyzone')->name('tenant.sortbyzone');
-Route::get('/main/sortbycategory','TenantController@sortbycategory')->name('tenant.sortbycategory');
-Route::get('/main/sortbylevel','TenantController@sortbylevel')->name('tenant.sortbylevel');
+Route::get('/main','TenantController@main')->name('tenant.main');
 
 Route::resource('/admin/tenant', 'TenantController');
 Route::get('admin/tenant/{tenant}/upload', 'tenantController@upload')->name('tenant.upload');
