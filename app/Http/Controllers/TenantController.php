@@ -22,8 +22,6 @@ class TenantController extends Controller
             $sort = 'zone';
             
         $id = $request->input('id');
-        if(empty($id))
-            $id='1';
 
         $aTenant = Tenant::find($id);
         $tenants = Tenant::orderBy($sort)->orderBy('name')->where('id', '!=', '1')->get();

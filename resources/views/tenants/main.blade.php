@@ -60,7 +60,7 @@ use App\Common;
   </div>
 
     <div class="content">
-        @if($aTenant->id == '1')
+        @if($aTenant === null)
             <div class="banner cover"><h1 class="banner-txt">Moonway.. better than S*nway</h1></div>
             <div><h2>Overview map:<h2></div>
             <!--put all floor map here-->
