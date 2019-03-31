@@ -24,7 +24,7 @@ a:hover{
   padding: 10px 21px;
   float: right;
 }
-
+form-control-edit
 .banner{
     background-color: #212121;
     color: white;
@@ -71,11 +71,17 @@ tr:nth-child(even)
     padding: 14px;
 }
 
+.brand-pic{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+}
 .btn-primary{
     background-color: #f44336;
     color: white;
     padding: 14px 25px;
-    text-align: center;
+    text-align:center;
     text-decoration: none;
     display: inline-block;
     border:none;
@@ -99,18 +105,95 @@ tr:nth-child(even)
 }
 
 #btnAdd{
-    justify-content: center;
+    /*justify-content: center;*/
     margin-left:auto;
     margin-right:auto;
     display: block;
-    width: 70;
+    width: 500px;
     margin-top: 20px;
 }
+#btnBack{
+  /*justify-content: center;*/
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 20px;
+  width: 50px;
 
+}
 #btnFilter{
   margin-left: 18px;
 }
-
+.panel-body-edit{
+  border: 1px solid black;
+  margin-top:60px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+}
+.upload-title{
+  font-weight: bold;
+  font-size: 25px;
+  margin-left: 43.5%;
+}
+.panel-body-upload{
+  border: 1px solid black;
+  margin-top:100px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+}
+.panel-body-create{
+    border: 1px solid black;
+    margin-top:60px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+}
+.form-control-edit{
+  width: 30%;
+  font-size: 20px;
+}
+.form-control-create{
+  width: 30%;
+  font-size: 20px;
+}
+.form-control:focus/*https://www.sanwebe.com/2014/08/css-html-forms-designs*/
+{
+  -moz-box-shadow: 0 0 8px #88D5E9;
+	-webkit-box-shadow: 0 0 8px #88D5E9;
+	box-shadow: 0 0 8px #88D5E9;
+	border: 3px solid #88D5E9;
+}
+.form-control-edit:focus/*https://www.sanwebe.com/2014/08/css-html-forms-designs*/
+{
+  -moz-box-shadow: 0 0 8px #88D5E9;
+	-webkit-box-shadow: 0 0 8px #88D5E9;
+	box-shadow: 0 0 8px #88D5E9;
+	border: 3px solid #88D5E9;
+}
+.form-control-create:focus/*https://www.sanwebe.com/2014/08/css-html-forms-designs*/
+{
+  -moz-box-shadow: 0 0 8px #88D5E9;
+	-webkit-box-shadow: 0 0 8px #88D5E9;
+	box-shadow: 0 0 8px #88D5E9;
+	border: 3px solid #88D5E9;
+}
+.form-group{
+      border: 1px solid black;
+      text-align: center;
+      margin-left: auto;
+      margin-right:auto;
+      margin-top: 10px;
+      width: 50%;
+      font-size: 30px;
+      border: 1px solid #ccc;
+}
+.col-sm-9{
+display: block;
+}
+#edit-title{
+  font-size: 45px;
+  margin-left: 43.5%;
+  font-weight: bold;
+}
 .warning{
   background-color: red;
   border:none;

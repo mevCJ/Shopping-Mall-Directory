@@ -1,10 +1,12 @@
 @extends('layouts.app')
 @section('content')
 <!-- Bootstrap Boilerplate... -->
+<div class="panel-body-upload">
+<div class="upload-title">
 <h3>Upload Photo</h3>
 <h4>Lot No.: <em>{{ $tenant->lot_number }}</em></h4>
 <h4>Tenant Name: <em>{{ $tenant->name }}</em></h4>
-<div class="panel-body">
+</div>
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
