@@ -64,7 +64,20 @@ use App\Common;
             <div class="banner cover"><h1 class="banner-txt">Moonway.. better than S*nway</h1></div>
             <div><h2>Overview map:<h2></div>
             <!--put all floor map here-->
-            <img src="/storage/tenants/overview.jpg" width="240">
+            <table collapse='0'>
+                         <tr>
+                           <td>GROUND FLOOR</td>
+                           <td>1ST FLOOR</td>
+                           <td>2ND FLOOR</td>
+                           <td>3RD FLOOR</td>
+                         </tr>
+                         <tr>
+                           <td><img src="/storage/tenants/groundfloor.jpg" width="240"></td>
+                           <td><img src="/storage/tenants/1stfloor.jpg" width="240"></td>
+                           <td><img src="/storage/tenants/2ndfloor.jpg" width="240"></td>
+                           <td><img src="/storage/tenants/3rdfloor.jpg" width="240"> </td>
+                         </tr>
+                       </table>
         @else
 
             <div class="banner cover">
@@ -83,9 +96,19 @@ use App\Common;
                 <div class="description">
                   <div style="font-size:15;">{{$aTenant -> description}}</div>
                 </div>
-            </div>
+              </div>
+             @if($aTenant->level=='1')
+            <p style="font-size:30">Ground Floor</p>
+            @elseif($aTenant->level=='2')
+           <p style="font-size:30">1ST FLOOR</p>
+           @elseif($aTenant->level=='3')
+          <p style="font-size:30">2ND FLOOR</p>
+          @else($aTenant->level=='4')
+         <p style="font-size:30">3RD FLOOR</p>
+        @endif
 
             <!--put tenant map here-->
+            <img class = "map" src="/storage/tenants/{{$aTenant->id}}map.gif" width="700" height="500">
             @if(Storage::disk('public')->exists('tenants/overview.jpg'))
             <img src="/storage/tenants/overview.jpg" width="240">
             @endif
