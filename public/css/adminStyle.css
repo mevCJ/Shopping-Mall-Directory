@@ -24,7 +24,7 @@ a:hover{
   padding: 10px 21px;
   float: right;
 }
-form-control-edit
+
 .banner{
     background-color: #212121;
     color: white;
@@ -40,7 +40,6 @@ form-control-edit
     padding-top: 12px;
     width: 100%;
     align-content: center;
-
 }
 
 table{
@@ -71,10 +70,18 @@ tr:nth-child(even)
     padding: 14px;
 }
 
+.show{
+  padding-top: 10px;
+  margin-top:10px;
+}
+
 .brand-pic{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    padding: 15px;
+    margin-top: 15px;
+    border:1px solid rgb(158, 158, 158);
     width: 250px;
 }
 .btn-primary{
@@ -124,37 +131,35 @@ tr:nth-child(even)
 #btnFilter{
   margin-left: 18px;
 }
-.panel-body-edit{
+.panel-body-edit, .panel-body-create{
   border: 1px solid black;
-  margin-top:60px;
+  margin: 20px;
   background-color: #f2f2f2;
   border: 1px solid #ccc;
 }
-.upload-title{
-  font-weight: bold;
-  font-size: 25px;
-  margin-left: 43.5%;
-}
+
 .panel-body-upload{
-  border: 1px solid black;
   margin-top:100px;
   background-color: #f2f2f2;
   border: 1px solid #ccc;
 }
-.panel-body-create{
-    border: 1px solid black;
-    margin-top:60px;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
+
+.upload-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
-.form-control-edit{
+
+.form-control-edit, .form-control-create{
   width: 30%;
   font-size: 20px;
+  margin-bottom: 20px;
+  border: none;
 }
-.form-control-create{
-  width: 30%;
-  font-size: 20px;
-}
+
 .form-control:focus/*https://www.sanwebe.com/2014/08/css-html-forms-designs*/
 {
   -moz-box-shadow: 0 0 8px #88D5E9;
@@ -177,7 +182,6 @@ tr:nth-child(even)
 	border: 3px solid #88D5E9;
 }
 .form-group{
-      border: 1px solid black;
       text-align: center;
       margin-left: auto;
       margin-right:auto;
@@ -186,6 +190,12 @@ tr:nth-child(even)
       font-size: 30px;
       border: 1px solid #ccc;
 }
+
+.btn{
+  border:none;
+  margin-bottom: 20px;
+}
+
 .col-sm-9{
 display: block;
 }

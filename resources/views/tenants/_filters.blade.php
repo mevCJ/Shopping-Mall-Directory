@@ -62,5 +62,4 @@ use App\Common;
 ]) !!}
 
 {!! Form::close() !!}
-</div>
 </section>

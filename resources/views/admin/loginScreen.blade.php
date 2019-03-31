@@ -10,12 +10,13 @@
 
     
     <body>
+
         <div class="login-box">
             <form method ="post" action="{{url('admin/login/checkLogin')}} ">
-                {{csrf_field()}}
-                <div class="logo">
+            <div class="logo">
                     <h1 class="threed">Moonway Velocity Login</h1>
                 </div>
+                {{csrf_field()}}
                 @if(count($errors) > 0)
                     <div class="alert-box">
                         <div class="alert-info">

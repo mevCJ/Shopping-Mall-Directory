@@ -84,7 +84,9 @@ use App\Common;
             </div>
 
             <!--put tenant map here-->
+            @if(Storage::disk('public')->exists('tenants/overview.jpg'))
             <img src="/storage/tenants/overview.jpg" width="240">
+            @endif
         @endif
     </div>
 
