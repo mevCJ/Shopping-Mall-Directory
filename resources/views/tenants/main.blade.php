@@ -10,29 +10,6 @@ use App\Common;
 
 @section('content')
 <div class="panel-body">
-<<<<<<< HEAD
-  <div>
-  <a href="{{route('tenant.sort',['zone'])}}"  class="btn-primary" >Zone</a> |
-  <a href="{{route('tenant.sort',['category'])}}" class="btn-primary"  >Category</a>  |
-  <a href="{{route('tenant.sort',['level'])}}" class="btn-primary"  >Level</a>
-</div>
-    @if(count($tenants) > 0)
-            @foreach ($sorter as $j => $s)
-            <div class="divider">
-            @if ($compare === 'zone')
-                {{ Common::$zone[$s->zone] }}
-            @elseif ($compare === 'category')
-                {{ $s->category }}
-            @elseif ($compare === 'level')
-                {{ Common::$level[$s->level]}}
-            @endif
-            </div>
-            @foreach ($tenants as $i => $tenant)
-            @if ($tenant->$compare === $s->$compare)
-            <table class="table table-striped task-table">
-            <tbody>
-            <tr onClick="window.location='{{route('tenant.map', [$compare, $tenant->id])}}'" style=>
-=======
     <div id="btn-panel">
         <div style="color:white; display:inline; padding-left: 12px; padding-right: 50px;">Sort by: </div>
         <a href="{{route('tenant.main',['sort' => 'zone'])}}"  class="btn-primary btn-nav @if($sort==='zone'){{'active'}}@endif">Zone</a>
@@ -57,7 +34,6 @@ use App\Common;
             <table class="table table-striped task-table">
             <tbody>
             <tr onClick="window.location='{{route('tenant.main', ['sort' => $sort,'id' => $tenant->id])}}'">
->>>>>>> 94e6be18db3d696a6daabc9315b6c1bf9a70f0bf
                 <td class="table-text dir-cell name" style="color: #e56a1d">
                     <div>{{$tenant->name}}</div>
                 </td>

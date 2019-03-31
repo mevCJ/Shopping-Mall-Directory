@@ -15,52 +15,6 @@ class TenantController extends Controller
       return view('tenants.home');
     }
 
-<<<<<<< HEAD
-    public function main()
-    {
-        $tenants = Tenant::orderBy('level')->orderBy('name')->get();
-        $sorter = Tenant::select('level')->distinct()->get();
-        $compare = 'level';
-        return view('tenants.main', [
-            'tenants' => $tenants,
-            'sorter' => $sorter,
-            'compare' => $compare
-        ]);
-    }
-
-    public function sort($type){
-
-        if($type === 'level'){
-            $tenants = Tenant::orderBy('level')->orderBy('name')->get();
-            $sorter = Tenant::select('level')->distinct()->get();
-            $compare = 'level';
-        }
-        else if($type === 'category'){
-            $tenants = Tenant::orderBy('category')->orderBy('name')->get();
-            $sorter = Tenant::select('category')->distinct()->get();
-            $compare = 'category';
-        }
-        else if($type === 'zone'){
-            $tenants = Tenant::orderBy('zone')->orderBy('name')->get();
-            $sorter = Tenant::select('zone')->distinct()->get();
-            $compare = 'zone';
-        }
-        return view('tenants.main', [
-            'tenants' => $tenants,
-            'sorter' => $sorter,
-            'compare' => $compare
-        ]);
-    }
-
-    public function displayMap($id){
-      $tenants = Tenant::find($id);
-      if(!$tenants) throw new ModelNotFoundException;
-      return view('tenants.main', [
-          'tenant' => $tenants
-      ]);
-    }
-
-=======
     public function main(Request $request)
     {
         $sort = $request->input('sort');
@@ -80,7 +34,6 @@ class TenantController extends Controller
             'aTenant' => $aTenant
         ]);
     }
->>>>>>> 94e6be18db3d696a6daabc9315b6c1bf9a70f0bf
     
     //admin
     public function create()
