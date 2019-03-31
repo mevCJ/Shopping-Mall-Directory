@@ -61,7 +61,6 @@ use App\Common;
                     <div>{{ $tenant->created_at }}</div>
                 </td>
                 <td class="table-text">
-                    <div>
                         {!! link_to_route(
                             'tenant.edit',
                             $title = 'Edit',
@@ -84,7 +83,6 @@ use App\Common;
                             'class' => 'btn btn-secondary warning'
                         ]) !!}
                         {!! Form::close() !!}
-                    </div>
                 </td>
             </tr>
             @endforeach

@@ -66,7 +66,7 @@ use App\Common;
     </div>
 
     <!-- Submit Button -->
-    <div class="form-group row">
+    <div class="form-group row btn">
         <div class="col-sm-offset-3 col-sm-6">
             {!! Form::button('Save', [
             'type' => 'submit',

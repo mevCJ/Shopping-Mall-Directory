@@ -6,7 +6,7 @@ use App\Common;
 
     <!-- Table -->
     <div class="panel-body">
-        <table class="table table-striped task-table">
+        <table class="table table-striped task-table show">
             <!-- Table Headings -->
             <thead>
                 <tr>

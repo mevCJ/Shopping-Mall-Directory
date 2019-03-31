@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Dancing Script";
+    src: url("fonts/DancingScript.otf");
+}
+
 html{
     background: linear-gradient(
         rgba(0, 0, 0, 0.7),
@@ -58,7 +63,7 @@ h2{
     display: block;
     margin: 20px auto;
     text-align: center;
-    border-bottom: 2px solid hsl(256, 74%, 30%);
+    border-bottom: 2px solid hsl(0, 72%, 53%);
     padding: 14px 10px;
     width: 200px;
     outline: none;
@@ -73,7 +78,7 @@ h2{
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 2px solid hsl(256, 74%, 30%);
+    border: 2px solid hsl(0, 72%, 53%);
     padding: 14px 10px;
     width: 100%;
     outline: none;
