@@ -11,18 +11,18 @@ use App\Common;
 @section('content')
 <div class="panel-body">
   <div>
-  <a href="{{route('tenant.sortbyzone')}}"  class="btn-primary" >Zone</a> |
-  <a href="{{route('tenant.sortbycategory')}}" class="btn-primary"  >Category</a>  |
-  <a href="{{route('tenant.sortbylevel')}}" class="btn-primary"  >Level</a>
+  <a href="{{route('tenant.sort',['zone'])}}"  class="btn-primary" >Zone</a> |
+  <a href="{{route('tenant.sort',['category'])}}" class="btn-primary"  >Category</a>  |
+  <a href="{{route('tenant.sort',['level'])}}" class="btn-primary"  >Level</a>
 </div>
     @if(count($tenants) > 0)
             @foreach ($sorter as $j => $s)
             <div class="divider">
-            @if ($host === 'zone')
+            @if ($compare === 'zone')
                 {{ Common::$zone[$s->zone] }}
-            @elseif ($host === 'category')
+            @elseif ($compare === 'category')
                 {{ $s->category }}
-            @elseif ($host === 'level')
+            @elseif ($compare === 'level')
                 {{ Common::$level[$s->level]}}
             @endif
             </div>
@@ -30,7 +30,7 @@ use App\Common;
             @if ($tenant->$compare === $s->$compare)
             <table class="table table-striped task-table">
             <tbody>
-            <tr onClick="window.location='{{route('tenant.map', [$tenant->id])}}'">
+            <tr onClick="window.location='{{route('tenant.map', [$compare, $tenant->id])}}'" style=>
                 <td class="table-text dir-cell name" style="color: #e56a1d">
                     <div>{{$tenant->name}}</div>
                 </td>

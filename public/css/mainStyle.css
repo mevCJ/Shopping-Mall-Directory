@@ -124,22 +124,32 @@ a:hover{
   margin: 0;
   padding: 0;
   width: 33%;
-  background-color: #1b1b1b;
+  background-color: #222222;
   position: fixed;
   height: 100%;
   overflow: auto;
-  box-shadow: 8px 0px 3px 0px rgba(0, 0, 0, 0.219);
+  box-shadow: 8px 0px 10px rgba(0, 0, 0, 0.219);
 }
 
 .content{
-  margin-left: 500px;
+  margin-left: 33%;
   padding: 0px 50px;
   height: 1000px;
-  color:white;
+  color:black;
 }
 
 .name{
   width:150px;
+}
+
+.zone{
+  width:50px;
+  text-align: center;
+}
+
+.level{
+  width:50px;
+  text-align: center;
 }
 
 .divider{
@@ -148,6 +158,7 @@ a:hover{
   font-size: 40px;
   background-color: #f44336;
 }
+
 .table{
   padding: 12px 15px;
 }
