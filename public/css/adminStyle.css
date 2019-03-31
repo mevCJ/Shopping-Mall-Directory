@@ -130,9 +130,30 @@ tr:nth-child(even)
 }
 
 .pagination{
-  display: inline-block;
+  display: block;
+  align-content: center;
+  margin-left: 40%;
+  padding: 30px;
 }
 
+.pagination li{
+  display: inline;
+  list-style: none;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+
+.pagination li.active{
+  background-color: #f44336;
+  color:white;
+}
+
+.pagination li:hover:not(.active) {
+  background-color: #ddd;
+  transition: background-color .3s;
+}
 
 .dir-row:hover{
     background-color: #474747da;

@@ -15,6 +15,7 @@ class TenantController extends Controller
       return view('tenants.home');
     }
 
+<<<<<<< HEAD
     public function main()
     {
         $tenants = Tenant::orderBy('level')->orderBy('name')->get();
@@ -59,6 +60,27 @@ class TenantController extends Controller
       ]);
     }
 
+=======
+    public function main(Request $request)
+    {
+        $sort = $request->input('sort');
+        if(empty($sort))
+            $sort = 'zone';
+            
+        $id = $request->input('id');
+
+        $aTenant = Tenant::find($id);
+        $tenants = Tenant::orderBy($sort)->orderBy('name')->where('id', '!=', '1')->get();
+        $sorter = Tenant::select($sort)->distinct()->where($sort, '!=', 'sample')->get();
+        
+        return view('tenants.main', [
+            'tenants' => $tenants,
+            'sorter' => $sorter,
+            'sort' => $sort,
+            'aTenant' => $aTenant
+        ]);
+    }
+>>>>>>> 94e6be18db3d696a6daabc9315b6c1bf9a70f0bf
     
     //admin
     public function create()

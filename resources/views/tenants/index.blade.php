@@ -57,6 +57,35 @@ use App\Common;
                 <td class="table-text">
                     <div>{{ $tenant->category }}</div>
                 </td>
+                <td class="table-text">
+                    <div>{{ $tenant->created_at }}</div>
+                </td>
+                <td class="table-text">
+                    <div>
+                        {!! link_to_route(
+                            'tenant.edit',
+                            $title = 'Edit',
+                            $parameters = [
+                                'id' => $tenant->id,
+                        ]
+                        ) !!}
+                        |
+                        {!! link_to_route(
+                            'tenant.upload',
+                            $title = 'Upload',
+                            $parameters = [
+                                'id' => $tenant->id,
+                            ]
+
+                        ) !!}
+                        |
+                        {!! Form::button('Delete', [
+                            'type' => 'Submit',
+                            'class' => 'btn btn-secondary warning'
+                        ]) !!}
+                        {!! Form::close() !!}
+                    </div>
+                </td>
             </tr>
             @endforeach
         </tbody>
@@ -69,6 +98,8 @@ use App\Common;
     <div>
     <a href="{{route('tenant.create')}}" class="btn-primary" id="btnAdd">Add New</a>
      </div>
-    {{ $tenants->links() }}
 </div>
+
+    {{ $tenants->links() }}
+
 @endsection
