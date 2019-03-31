@@ -20,17 +20,22 @@ class TenantController extends Controller
         $sort = $request->input('sort');
         if(empty($sort))
             $sort = 'zone';
-
+            
         $id = $request->input('id');
 
         $aTenant = Tenant::find($id);
         $tenants = Tenant::orderBy($sort)->orderBy('name')->get();
+<<<<<<< HEAD
         $sorter = Tenant::select($sort)->distinct()->get();
 <<<<<<< HEAD
 
 =======
 
 >>>>>>> eee82e00d744028315d034a7a8803a2f5a39d82c
+=======
+        $sorter = Tenant::select($sort)->get();
+        
+>>>>>>> parent of 6a290b7... insert map location for every store
         return view('tenants.main', [
             'tenants' => $tenants,
             'sorter' => $sorter,
@@ -38,7 +43,7 @@ class TenantController extends Controller
             'aTenant' => $aTenant
         ]);
     }
-
+    
     //admin
     public function create()
     {
