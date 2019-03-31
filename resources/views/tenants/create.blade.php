@@ -53,6 +53,14 @@ use App\Common;
         </div>
     </div>
 
+    <!-- Description -->
+    <div class="form-group row">
+        {!! Form::label('tenant-description', 'Description', [ 'class' => 'control-label col-sm-3', ]) !!}
+        <div class="col-sm-9">
+          {!! Form::textarea('description', null, ['id' => 'tenant-description', 'rows' => 4, 'cols' => 54, 'style' => 'resize:none']) !!}
+        </div>
+    </div>
+
     <div class="panel-body">
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -68,9 +76,9 @@ use App\Common;
     <!-- Submit Button -->
     <div class="form-group row">
         <div class="col-sm-offset-3 col-sm-6">
-            {!! Form::button('Save', [ 
+            {!! Form::button('Save', [
             'type' => 'submit',
-            'class' => 'btn btn-primary', 
+            'class' => 'btn btn-primary',
             'value' => 'save',
             'name' => 'btnSubmit'
              ]) !!}

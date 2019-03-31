@@ -66,10 +66,11 @@ use App\Common;
             <!--put all floor map here-->
             <img src="/storage/tenants/overview.jpg" width="240">
         @else
-            
+
             <div class="banner cover">
                  <!--logo and info here-->
-                <img src="/storage/tenants/{{$aTenant->id}}.jpg" width="240">
+                <img class="logoimage" src="/storage/tenants/{{$aTenant->id}}.jpg" width="240" height="140">
+                <img class = "storeimage"src="/storage/tenants/{{$aTenant->id}}store.jpg" width="500" height="300">
                 <ul style="list-style:none">
                     <li>Name: {{$aTenant->name}}</li>
                     <li>Lot Number: {{$aTenant->lot_number}}</li>
@@ -77,6 +78,9 @@ use App\Common;
                     <li>Floor: {{Common::$level[$aTenant->level]}}</li>
                     <li>Category: {{$aTenant->category}}</li>
                 </ul>
+                <div class="description">
+                  <div style="font-size:15;">{{$aTenant -> description}}</div>
+                </div>
             </div>
 
             <!--put tenant map here-->

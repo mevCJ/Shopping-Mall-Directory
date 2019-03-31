@@ -49,6 +49,14 @@ use App\Common;
             </div>
         </div>
 
+        <!-- Description -->
+        <div class="form-group row">
+            {!! Form::label('tenant-description', 'Description', [ 'class' => 'control-label col-sm-3', ]) !!}
+            <div class="col-sm-9">
+              {!! Form::textarea('description', null, ['id' => 'tenant-description', 'rows' => 4, 'cols' => 54, 'style' => 'resize:none']) !!}
+            </div>
+        </div>
+
         <!-- Submit Button -->
         <div class="form-group row">
             <div class="col-sm-offset-3 col-sm-6">

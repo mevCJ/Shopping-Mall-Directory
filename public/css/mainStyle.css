@@ -174,8 +174,28 @@ a:hover{
   color:black;
 }
 
+.logoimage{
+  margin-top:0px;
+  margin-bottom:50px;
+  margin-right:0px;
+  margin-left:30px;
+}
+
+.storeimage{
+  margin-top:30px;
+  margin-bottom:0px;
+  margin-right:0px;
+  margin-left:75px;
+}
+
+.description{
+  position: absolute;
+  top: 55%;
+  left: 55%;
+}
+
 .banner{
-  height: 500px;
+  height: 550px;
   padding: 0px;
   margin: 0px;
   align-content: center;

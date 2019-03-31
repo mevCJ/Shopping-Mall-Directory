@@ -15,10 +15,10 @@ use App\Common;
             </thead>
             <!-- Table Body -->
             <tbody>
-                <tr>
-                    <td>Name</td>
-                    <td>{{ $tenant->name }}</td>
-                </tr>
+              <tr>
+                  <td>Name</td>
+                  <td>{{ $tenant->name }}</td>
+              </tr>
                 <tr>
                     <td>Lot Number</td>
                     <td>{{ $tenant->lot_number }}</td>
@@ -34,6 +34,10 @@ use App\Common;
                 <tr>
                     <td>Category</td>
                     <td>{{ $tenant->category }}</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>{{ $tenant->description }}</td>
                 </tr>
                 <tr>
                     <td>Created</td>
