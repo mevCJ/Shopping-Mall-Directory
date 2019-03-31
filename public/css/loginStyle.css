@@ -1,0 +1,117 @@
+html{
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+      ),
+    url(/storage/tenants/bg.jpg);
+}
+body{
+    margin: 0;  
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.logo {
+    width: 150%;
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .logo h1 {
+    font-size: 53px;
+  }
+  
+  .threed {
+    font-family: "Dancing Script";
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    -webkit-text-stroke: 1px rgba(250, 6, 6, 0.2);
+    text-shadow: -10px 0 rgba(17, 34, 185, 0.4), 10px 0 rgba(0, 0, 0, 0.4);
+  }
+  
+
+.login-box{
+    width:300px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #191919;
+    text-align: center;
+    opacity: 0.9;
+    box-shadow: 10px 11px 15px -2px rgba(176,173,175,0.66);
+
+}
+
+h2{
+    color: white;
+    font-weight: 500;
+}
+
+.login-box .userInfo{
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border-bottom: 2px solid hsl(256, 74%, 30%);
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.login-box .loginBtn{
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid hsl(256, 74%, 30%);
+    padding: 14px 10px;
+    width: 100%;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.login-box .loginBtn:hover{
+    border-color: #be1111;
+    opacity: 0.5;
+
+}
+
+.login-box .userInfo:hover{
+    width: 280px;
+    border-color: #be1111;
+
+}
+
+.alert-box{
+    
+    margin: 0;
+    display: grid;
+    place-items: center;
+    background: #222;
+}
+
+.alert-info{
+    max-width: 100%;
+    padding: 1rem;
+    color: white;
+    border-width: 3px;
+    border-style: solid;
+    border-image: 
+        linear-gradient(
+        to bottom, 
+        red, 
+        rgba(0, 0, 0, 0)
+        ) 1 100%;
+}

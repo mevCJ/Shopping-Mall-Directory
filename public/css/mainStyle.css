@@ -131,6 +131,16 @@ a:hover{
   height: 100%;
   overflow: auto;
   box-shadow: 8px 0px 10px rgba(0, 0, 0, 0.219);
+<<<<<<< HEAD
+}
+
+.content{
+  margin-left: 33%;
+  padding: 0px 50px;
+  height: 1000px;
+  color:black;
+=======
+>>>>>>> 94e6be18db3d696a6daabc9315b6c1bf9a70f0bf
 }
 
 .name{

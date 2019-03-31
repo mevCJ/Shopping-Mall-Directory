@@ -10,6 +10,7 @@ use App\Common;
 
 <div class="panel-body">
     <h2 style="text-align:center">Records</h2>
+    
     @if(count($tenants) > 0)
     <table class="table table-striped task-table">
         <!-- Table Headings -->
