@@ -3,6 +3,7 @@ use App\Common;
 ?>
     @extends('layouts.app')
     @section('content')
+
     <!-- Table -->
     <div class="panel-body">
         <table class="table table-striped task-table">
@@ -40,11 +41,13 @@ use App\Common;
                     <td>{{ $tenant->created_at }}</td>
                 </tr>
                 @if(Storage::disk('public')->exists('tenants/'.$tenant->id.'.jpg'))
-                <img src="/storage/tenants/{{$tenant->id}}.jpg"
-                width="240" alt="{{ $tenant->lot_no }}">
+
+                <img src="/storage/tenants/{{$tenant->id}}.jpg" class="brand-pic"
+                  alt="{{ $tenant->lot_no }}">
+
                 @endif
             </tbody>
         </table>
-        <a href="{{route('tenant.index')}}" class="btn-primary">Back</a>
+        <a href="{{route('tenant.index')}}" class="btn-primary" id="btnBack">Back</a>
     </div>
     @endsection
