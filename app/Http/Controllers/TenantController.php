@@ -20,13 +20,13 @@ class TenantController extends Controller
         $sort = $request->input('sort');
         if(empty($sort))
             $sort = 'zone';
-            
+
         $id = $request->input('id');
 
         $aTenant = Tenant::find($id);
         $tenants = Tenant::orderBy($sort)->orderBy('name')->get();
-        $sorter = Tenant::select($sort)->get();
-        
+        $sorter = Tenant::select($sort)->distinct()->get();
+
         return view('tenants.main', [
             'tenants' => $tenants,
             'sorter' => $sorter,
@@ -34,7 +34,7 @@ class TenantController extends Controller
             'aTenant' => $aTenant
         ]);
     }
-    
+
     //admin
     public function create()
     {
