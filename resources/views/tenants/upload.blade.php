@@ -3,7 +3,7 @@
 <!-- Bootstrap Boilerplate... -->
 <div class="panel-body-upload">
 <div class="upload-title">
-<h3>Upload Photo</h3>
+<h3 style="margin-left: auto; margin-right:auto;">Upload Photo</h3>
 <h4>Lot No.: <em>{{ $tenant->lot_number }}</em></h4>
 <h4>Tenant Name: <em>{{ $tenant->name }}</em></h4>
 </div>
@@ -31,11 +31,12 @@
             {!! Form::file('image', [
             'id' => 'tenant-photo-file',
             'class' => 'form-control',
+            'style' => 'padding-bottom: 15px'
             ]) !!}
         </div>
     </div>
     <!-- Submit Button -->
-    <div class="form-group row">
+    <div class="form-group row btn">
         <div class="col-sm-offset-3 col-sm-6">
             {!! Form::button('Upload', [
             'type' => 'Submit',

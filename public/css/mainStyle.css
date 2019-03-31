@@ -1,16 +1,27 @@
+@font-face {
+  font-family: "Dancing Script";
+  src: url("fonts/DancingScript.otf");
+}
+
+@keyframes slideUp{
+  from {top:100%;}
+  to {top:60%;}
+}
+
 .button1{
   text-align: center;
   font-size: 20px;
-  border-radius: 100%;
-  height: 200px;
+  height: 60px;
   width: 200px;
   border-color:#f44336;
   color: white;
   background-color: black;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
+  animation-name: slideUp;
+  animation-duration: 0.8s;
 }
 
 body, html{
@@ -21,10 +32,20 @@ body, html{
   background-color: white;
 }
 
+.title{
+  text-align: center;
+  font-family:"Dancing Script";
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .container {
   position: relative;
   color: white;
 }
+
 html, body {
     font-size: 25;
     margin: 0;
@@ -131,16 +152,13 @@ a:hover{
   height: 100%;
   overflow: auto;
   box-shadow: 8px 0px 10px rgba(0, 0, 0, 0.219);
-<<<<<<< HEAD
 }
 
 .content{
   margin-left: 33%;
-  padding: 0px 50px;
+
   height: 1000px;
   color:black;
-=======
->>>>>>> 94e6be18db3d696a6daabc9315b6c1bf9a70f0bf
 }
 
 .name{
@@ -173,6 +191,7 @@ a:hover{
   width: 0px;  /* remove scrollbar space */
   background: transparent;  /* optional: just make scrollbar invisible */
 }
+
 /* optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
   background: #FF0000;
@@ -208,6 +227,7 @@ a:hover{
   height: 550px;
   padding: 0px;
   margin: 0px;
+  width:100%;
   align-content: center;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
