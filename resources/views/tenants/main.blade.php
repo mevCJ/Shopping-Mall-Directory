@@ -69,7 +69,9 @@ use App\Common;
 
             <div class="banner cover">
                  <!--logo and info here-->
-                <img class="logoimage" src="/storage/tenants/{{$aTenant->id}}.jpg" width="240" height="140">
+                 <div class="square">
+                <img class="logoimage" src="/storage/tenants/{{$aTenant->id}}.jpg" >
+                </div>
                 <img class = "storeimage"src="/storage/tenants/{{$aTenant->id}}store.jpg" width="500" height="300">
                 <ul style="list-style:none">
                     <li>Name: {{$aTenant->name}}</li>

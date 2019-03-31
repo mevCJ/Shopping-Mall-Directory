@@ -204,12 +204,17 @@ a:hover{
 }
 
 .logoimage{
+  max-width:100%;
+  max-height:100%;
+}
+.square {
+
+  width: 200px;
   margin-top:0px;
-  margin-bottom:50px;
   margin-right:0px;
   margin-left:30px;
+  display:inline-block;
 }
-
 .storeimage{
   margin-top:30px;
   margin-bottom:0px;

@@ -25,7 +25,7 @@ class TenantController extends Controller
 
         $aTenant = Tenant::find($id);
         $tenants = Tenant::orderBy($sort)->orderBy('name')->get();
-        $sorter = Tenant::select($sort)->get();
+        $sorter = Tenant::select($sort)->distinct()->get();
         
         return view('tenants.main', [
             'tenants' => $tenants,
