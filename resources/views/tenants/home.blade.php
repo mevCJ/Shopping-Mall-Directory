@@ -13,7 +13,7 @@ use App\Common;
 <div class=container>
 
 <div class=cover style="height: 100%"></div>
-<div class=title><br>Welcome to MoonWay Velocity Megamall Directory</div>
+<div class=title><span style="font-family:arial">Welcome to</span><br><span style="font-size:50px;">MoonWay Velocity Megamall</span></div>
 <a href="{{route('tenant.main')}}">
   <button class="button button1">Get Direction</button>
 </a>

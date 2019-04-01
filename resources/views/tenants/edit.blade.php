@@ -5,7 +5,10 @@ use App\Common;
     @section('content')
     <!-- Table -->
         <!-- Body-->
-        <div class="panel-body">
+        <div class="panel-body-edit">
+          <h3 id="edit-title">
+            Edit tenant
+          </h3>
         <!-- Create New form -->
         {!! Form::model($tenant, [ 'route' => ['tenant.update', $tenant->id], 'method'=>'put', 'class' => 'form-horizontal' ]) !!}
 
@@ -13,15 +16,15 @@ use App\Common;
         <div class="form-group row">
             {!! Form::label('tenant-name', 'Name', [ 'class' => 'control-label col-sm-3', ]) !!}
             <div class="col-sm-9">
-                {!! Form::text('name', null, [ 'id' => 'tenant-name', 'class' => 'form-control', 'maxlength' => 100, ]) !!}
+                {!! Form::text('name', null, [ 'id' => 'tenant-name', 'class' => 'form-control-edit', 'maxlength' => 100, ]) !!}
             </div>
         </div>
 
         <!-- Lot Number -->
         <div class="form-group row">
             {!! Form::label('tenant-lot-number', 'Lot Number', [ 'class' => 'control-label col-sm-3', ]) !!}
-            <div class="col-sm-9">
-                {!! Form::text('lot_number', null, [ 'id' => 'tenant-lot-number', 'class' => 'form-control', 'maxlength' => 5, ]) !!}
+            <div class="col-sm-9 col-text">
+                {!! Form::text('lot_number', null, [ 'id' => 'tenant-lot-number', 'class' => 'form-control-edit', 'maxlength' => 5, ]) !!}
             </div>
         </div>
 
@@ -29,7 +32,7 @@ use App\Common;
         <div class="form-group row">
             {!! Form::label('tenant-zone', 'Zone', ['class' => 'contorl-label col-sm-3',]) !!}
             <div class="col-sm-9">
-                {!! Form::select('zone', Common::$zone, null, [ 'class' => 'form-control', 'placeholder' => '- Select Zone -', ]) !!}
+                {!! Form::select('zone', Common::$zone, null, [ 'class' => 'form-control-edit', 'placeholder' => '- Select Zone -', ]) !!}
             </div>
         </div>
 
@@ -37,20 +40,28 @@ use App\Common;
         <div class="form-group row">
             {!! Form::label('tenant-level', 'Floor Level', ['class' => 'contorl-label col-sm-3',]) !!}
             <div class="col-sm-9">
-                {!! Form::select('level', Common::$level, null, [ 'class' => 'form-control', 'placeholder' => '- Select Floor -', ]) !!}
+                {!! Form::select('level', Common::$level, null, [ 'class' => 'form-control-edit', 'placeholder' => '- Select Floor -', ]) !!}
             </div>
         </div>
 
         <!-- Category -->
         <div class="form-group row">
             {!! Form::label('tenant-category', 'Category', [ 'class' => 'control-label col-sm-3', ]) !!}
+            <div class="col-sm-9 col-text">
+                {!! Form::text('category', null, [ 'id' => 'tenant-category', 'class' => 'form-control-edit', 'maxlength' => 20, ]) !!}
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group row">
+            {!! Form::label('tenant-description', 'Description', [ 'class' => 'control-label col-sm-3', ]) !!}
             <div class="col-sm-9">
-                {!! Form::text('category', null, [ 'id' => 'tenant-category', 'class' => 'form-control', 'maxlength' => 20, ]) !!}
+              {!! Form::textarea('description', null, ['id' => 'tenant-description', 'rows' => 4, 'cols' => 54, 'style' => 'resize:none']) !!}
             </div>
         </div>
 
         <!-- Submit Button -->
-        <div class="form-group row">
+        <div class="form-group row btn">
             <div class="col-sm-offset-3 col-sm-6">
                 {!! Form::button('Save', [ 'type' => 'submit', 'class' => 'btn btn-primary', ]) !!}
             </div>
