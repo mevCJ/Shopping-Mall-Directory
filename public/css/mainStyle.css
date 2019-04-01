@@ -203,23 +203,51 @@ a:hover{
   color:black;
 }
 
-.logoimage{
+.rectangle{
+  width:700px;
+  height:500px;
+  margin-left:auto;
+  margin-right: auto;
+  padding-bottom: 50px;
+}
+
+.map{
   max-width:100%;
   max-height:100%;
 }
-.square {
 
+.horizontal li{
+
+  display:inline-block;
+  list-style: none;
+}
+
+.logo-info{
+  margin-right: 70%;
+  padding-top: 10%;
+}
+
+.square {
   width: 200px;
   margin-top:0px;
   margin-right:0px;
   margin-left:30px;
   display:inline-block;
 }
+
+.logoimage{
+  max-width:100%;
+  max-height:100%;
+}
+
+.store-desc{
+  margin-left: 20%;
+}
+
 .storeimage{
-  margin-top:30px;
-  margin-bottom:0px;
-  margin-right:0px;
-  margin-left:75px;
+  position: absolute;
+  top: 10%;
+  left: 60%;
 }
 
 .description{
@@ -228,12 +256,19 @@ a:hover{
   left: 55%;
 }
 
+
+.map-panel{
+  margin-top:0;
+  margin-left: 40px
+}
+
 .banner{
   height: 550px;
   padding: 0px;
   margin: 0px;
   width:100%;
   align-content: center;
+  text-align: center;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
 }

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Dancing Script";
+  src: url("fonts/DancingScript.otf");
+}
+
 body, html{
     height: 100%;
     padding: 0px;

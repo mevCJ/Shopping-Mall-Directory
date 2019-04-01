@@ -20,7 +20,7 @@ class TenantController extends Controller
         $sort = $request->input('sort');
         if(empty($sort))
             $sort = 'zone';
-            
+
         $id = $request->input('id');
 
         $aTenant = Tenant::find($id);
@@ -34,7 +34,7 @@ class TenantController extends Controller
             'aTenant' => $aTenant
         ]);
     }
-    
+
     //admin
     public function create()
     {
