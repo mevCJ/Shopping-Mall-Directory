@@ -20,7 +20,7 @@ a:hover{
   text-decoration: underline;
 }
 
-#signUp{
+#signOut{
   padding: 10px 21px;
   float: right;
 }
@@ -40,7 +40,6 @@ a:hover{
     padding-top: 12px;
     width: 100%;
     align-content: center;
-
 }
 
 table{
@@ -64,17 +63,32 @@ tr:nth-child(even)
 .table-text{
     text-align: center;
     font-size: 20px;
+
 }
 
 .control-label{
     padding: 14px;
 }
 
+.show{
+  padding-top: 10px;
+  margin-top:10px;
+}
+
+.brand-pic{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    margin-top: 15px;
+    border:1px solid rgb(158, 158, 158);
+    width: 250px;
+}
 .btn-primary{
     background-color: #f44336;
     color: white;
     padding: 14px 25px;
-    text-align: center;
+    text-align:center;
     text-decoration: none;
     display: inline-block;
     border:none;
@@ -98,18 +112,98 @@ tr:nth-child(even)
 }
 
 #btnAdd{
-    justify-content: center;
+    /*justify-content: center;*/
     margin-left:auto;
     margin-right:auto;
     display: block;
-    width: 70;
+    width: 500px;
     margin-top: 20px;
 }
+#btnBack{
+  /*justify-content: center;*/
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 20px;
+  width: 50px;
 
+}
 #btnFilter{
   margin-left: 18px;
 }
+.panel-body-edit, .panel-body-create{
+  border: 1px solid black;
+  margin: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+}
 
+.panel-body-upload{
+  margin-top:100px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+}
+
+.upload-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.form-control-edit, .form-control-create{
+  width: 30%;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border: none;
+}
+
+.form-control:focus/*https://www.sanwebe.com/2014/08/css-html-forms-designs*/
+{
+  -moz-box-shadow: 0 0 8px #88D5E9;
+	-webkit-box-shadow: 0 0 8px #88D5E9;
+	box-shadow: 0 0 8px #88D5E9;
+	border: 3px solid #88D5E9;
+}
+.form-control-edit:focus/*https://www.sanwebe.com/2014/08/css-html-forms-designs*/
+{
+  -moz-box-shadow: 0 0 8px #88D5E9;
+	-webkit-box-shadow: 0 0 8px #88D5E9;
+	box-shadow: 0 0 8px #88D5E9;
+	border: 3px solid #88D5E9;
+}
+.form-control-create:focus/*https://www.sanwebe.com/2014/08/css-html-forms-designs*/
+{
+  -moz-box-shadow: 0 0 8px #88D5E9;
+	-webkit-box-shadow: 0 0 8px #88D5E9;
+	box-shadow: 0 0 8px #88D5E9;
+	border: 3px solid #88D5E9;
+}
+.form-group{
+      text-align: center;
+      margin-left: auto;
+      margin-right:auto;
+      margin-top: 10px;
+      width: 50%;
+      font-size: 30px;
+      border: 1px solid #ccc;
+}
+
+.btn{
+  border:none;
+  margin-bottom: 20px;
+}
+
+.col-sm-9{
+display: block;
+}
+#edit-title{
+  font-size: 45px;
+  margin-left: 43.5%;
+  font-weight: bold;
+}
 .warning{
   background-color: red;
   border:none;
@@ -129,5 +223,32 @@ tr:nth-child(even)
 }
 
 .pagination{
-  display: inline-block;
+  display: block;
+  align-content: center;
+  margin-left: 40%;
+  padding: 30px;
+}
+
+.pagination li{
+  display: inline;
+  list-style: none;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+
+.pagination li.active{
+  background-color: #f44336;
+  color:white;
+}
+
+.pagination li:hover:not(.active) {
+  background-color: #ddd;
+  transition: background-color .3s;
+}
+
+.dir-row:hover{
+    background-color: #474747da;
+    cursor: pointer;
 }

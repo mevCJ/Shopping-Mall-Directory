@@ -12,5 +12,6 @@ class Tenant extends Model
         'zone',
         'level',
         'category',
+        'description',
     ];
 }

@@ -10,6 +10,7 @@ use App\Common;
 
 <div class="panel-body">
     <h2 style="text-align:center">Records</h2>
+    
     @if(count($tenants) > 0)
     <table class="table table-striped task-table">
         <!-- Table Headings -->
@@ -60,7 +61,6 @@ use App\Common;
                     <div>{{ $tenant->created_at }}</div>
                 </td>
                 <td class="table-text">
-                    <div>
                         {!! link_to_route(
                             'tenant.edit',
                             $title = 'Edit',
@@ -68,6 +68,7 @@ use App\Common;
                                 'id' => $tenant->id,
                         ]
                         ) !!}
+                        |
                         {!! link_to_route(
                             'tenant.upload',
                             $title = 'Upload',
@@ -76,12 +77,12 @@ use App\Common;
                             ]
 
                         ) !!}
+                        |
                         {!! Form::button('Delete', [
                             'type' => 'Submit',
                             'class' => 'btn btn-secondary warning'
                         ]) !!}
                         {!! Form::close() !!}
-                    </div>
                 </td>
             </tr>
             @endforeach
@@ -95,6 +96,8 @@ use App\Common;
     <div>
     <a href="{{route('tenant.create')}}" class="btn-primary" id="btnAdd">Add New</a>
      </div>
-    {{ $tenants->links() }}
 </div>
+
+    {{ $tenants->links() }}
+
 @endsection
