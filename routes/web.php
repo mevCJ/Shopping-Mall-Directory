@@ -10,16 +10,10 @@
 |
 */
 
-/*Route::get('/admin/tenant/create', 'TenantController@create')->name('tenant.create');
-Route::post('admin/tenant', 'TenantController@store')->name('tenant.store');
-Route::get('admin/tenant', 'TenantController@index')->name('tenant.index');
-Route::get('admin/tenant/{tenant}','TenantController@show')->name('tenant.show');
-Route::get('/', function () {
-    return view('welcome');
-});*/
 Route::get('/home','TenantController@home')->name('tenant.home');
 Route::get('/main','TenantController@main')->name('tenant.main');
 
+Route::get('admin','AdminController@index');
 Route::get('/admin/login', 'AdminController@index');
 Route::post('/admin/login/checkLogin', 'adminController@checkLogin');
 Route::get('admin/login/successLogin', 'adminController@successLogin');
