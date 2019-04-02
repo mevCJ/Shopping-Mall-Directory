@@ -261,6 +261,11 @@ a:hover{
   margin-top:0;
   margin-left: 40px
 }
+.map{
+  position: absolute;
+  top: 90%;
+  left: 45%;
+}
 
 .banner{
   height: 550px;

@@ -98,8 +98,6 @@ use App\Common;
                     </div>
                 </div>
 
-            </div>
-
             <div class="map-panel">
             @if($aTenant->level=='1')
            <p style="font-size:30">Ground Floor</p>
@@ -110,14 +108,15 @@ use App\Common;
          @else($aTenant->level=='4')
         <p style="font-size:30">3rd Floor</p>
        @endif
-            <!--put tenant map here-->
-            <div class="rectangle">
-            @if(Storage::disk('public')->exists('tenants/'.$aTenant->id.'map.gif'))
-            <img class ="map" src="/storage/tenants/{{$aTenant->id}}map.gif">
-            @endif
-            </div>
-        @endif
-</div>
-    </div>
 
+            <!--put tenant map here-->
+          <div class="rectangle">
+          @if(Storage::disk('public')->exists('tenants/'.$aTenant->id.'map.gif'))
+          <img class ="map" src="/storage/tenants/{{$aTenant->id}}map.gif">
+          @endif
+          </div>
+          @endif
+      </div>
+    </div>
+</div>
 @endsection
