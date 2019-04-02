@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/home','TenantController@home')->name('tenant.home');
 Route::get('/main','TenantController@main')->name('tenant.main');
 
+Route::get('/admin', 'AdminController@index');
 Route::get('/admin/login', 'AdminController@index');
 Route::post('/admin/login/checkLogin', 'adminController@checkLogin');
 Route::get('admin/login/successLogin', 'adminController@successLogin');

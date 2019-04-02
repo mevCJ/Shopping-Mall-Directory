@@ -31,19 +31,19 @@ use App\Common;
         </div>
         @foreach ($tenants as $i => $tenant)
             @if ($tenant->$sort === $s->$sort)
-            <table class="table table-striped task-table">
+            <table class="table table-striped task-table side-table">
             <tbody>
-            <tr onClick="window.location='{{route('tenant.main', ['sort' => $sort,'id' => $tenant->id])}}'">
-                <td class="table-text dir-cell name" style="color: #e56a1d">
+            <tr onClick="window.location='{{route('tenant.main', ['sort' => $sort,'id' => $tenant->id])}}'" class="side-tr">
+                <td class="table-text dir-cell name side-tr" style="color: #e56a1d">
                     <div>{{$tenant->name}}</div>
                 </td>
-                <td class="table-text dir-cell zone">
+                <td class="table-text dir-cell zone side-td">
                     <div>{{ Common::$zone[$tenant->zone] }}</div>
                 </td>
-                <td class="table-text dir-cell level">
+                <td class="table-text dir-cell level side-td">
                     <div>{{ Common::$level[$tenant->level] }}</div>
                 </td>
-                <td class="table-text dir-cell category">
+                <td class="table-text dir-cell category side-td">
                     <div>{{ $tenant->category }}</div>
                 </td>
             </tr>
@@ -82,13 +82,30 @@ use App\Common;
                     <div class="square">
                         <img class="logoimage" src="/storage/tenants/{{$aTenant->id}}.jpg" >
                     </div>
-                    <ul style="list-style:none; text-align:left">
-                        <li>Name: {{$aTenant->name}}</li>
-                        <li>Lot Number: {{$aTenant->lot_number}}</li>
-                        <li>Zone: {{Common::$zone[$aTenant->zone]}}</li>
-                        <li>Floor: {{Common::$level[$aTenant->level]}}</li>
-                        <li>Category: {{$aTenant->category}}</li>
+                    <!--<ul style="list-style:none; text-align:left;">
+                        <li>{{$aTenant->name}}</li>
+                        <li><span style="font-size:12px">Flor: <br></span>{{Common::$level[$aTenant->level]}}</li>
+                        <li><span style="font-size:12px">Category: <br></span>{{$aTenant->category}}</li>
                     </ul>
+                    <div>
+                    <div><span style="font-size:12px;">Lot Number: <br></span>{{$aTenant->lot_number}} </div>
+                    <div style="text-align:right; display:inline-block"><span style="font-size:12px;">Zone: <br></span>{{Common::$zone[$aTenant->zone]}}</div>
+                  </div>-->
+                  <table style="width:200px; margin-left: 20%; padding-top: 20px; color:white">
+                    <tbody>
+                      <th style="color:white; font-size:20px; width:100%;">{{$aTenant->name}}</th>
+                      <tr id="info-tr">
+                        <td id="info"><span style="font-size:12px;">Zone: <br></span>{{Common::$zone[$aTenant->zone]}}</td>
+                        <td id="info" style="text-align:right"><span style="font-size:12px; text-align:right;">Lot Number: <br></span>{{$aTenant->lot_number}} </td>
+                      </tr>
+                      <tr id="info-tr">
+                        <td id="info"><span style="font-size:12px;">level: <br></span><span style="font-size:22px">{{Common::$level[$aTenant->level]}}</span></td>
+                      </tr>
+                      <tr id="info-tr">
+                        <td id="info"><span style="font-size:12px; text-align:right;">Category: <br></span><span style="font-size:22px">{{$aTenant->category}}</span> </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
 
                 <div class="store-desc">

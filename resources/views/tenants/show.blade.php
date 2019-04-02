@@ -6,7 +6,7 @@ use App\Common;
 
     <!-- Table -->
     <div class="panel-body">
-        <table class="table table-striped task-table show">
+        <table class="table table-striped task-table show" style="max-width: 50%;">
             <!-- Table Headings -->
             <thead>
                 <tr>
