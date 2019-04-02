@@ -98,6 +98,8 @@ use App\Common;
                     </div>
                 </div>
 
+              </div>
+
             <div class="map-panel">
             @if($aTenant->level=='1')
            <p style="font-size:30">Ground Floor</p>
